@@ -138,7 +138,7 @@
             gap: 3rem;
             align-items: center;
             min-height: 100vh;
-            padding-top: 100px; 
+            padding-top: 100px; /* Base safe height for navigation bar */
         }
 
         .hero-left {
@@ -174,6 +174,7 @@
             margin-bottom: 2.5rem;
         }
 
+        /* Interactive Right-Side Hero Animation */
         .hero-right {
             display: flex;
             justify-content: center;
@@ -181,6 +182,7 @@
             position: relative;
         }
 
+        /* Dynamic CSS 3D Sphere Ring Animation */
         .tech-orb {
             width: 260px;
             height: 260px;
@@ -253,254 +255,180 @@
             box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
         }
 
-        /* NEW REDESIGNED: About Section (Premium & Polished Layout) */
-        .about-wrapper {
+        /* NEW REDESIGNED: About Section (Modern Layout) */
+        .about-grid-modern {
             display: grid;
-            grid-template-columns: 1.3fr 0.9fr;
+            grid-template-columns: 1.25fr 0.75fr;
             gap: 3.5rem;
             align-items: start;
         }
 
-        .about-text p {
+        .about-narrative {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+        }
+
+        .about-narrative p {
             font-size: 1.05rem;
             color: var(--gray);
             margin-bottom: 1.5rem;
+            line-height: 1.7;
             text-align: justify;
         }
 
-        .about-pillars {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin-top: 2rem;
+        .about-narrative p:last-child {
+            margin-bottom: 0;
         }
 
-        .about-pillar-card {
-            background: var(--surface);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            transition: var(--transition);
-        }
-
-        .about-pillar-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .about-pillar-card i {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        .about-pillar-card span {
-            font-weight: 700;
-            font-size: 0.95rem;
+        .about-narrative strong {
             color: var(--dark);
         }
 
-        .about-quick-facts {
-            background: #1e293b; /* Dark theme contrast card */
-            color: #f8fafc;
-            padding: 3rem 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-quick-facts::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .about-quick-facts h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1.75rem;
-            color: #2dd4bf;
-            position: relative;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .about-quick-facts ul li {
-            list-style: none;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.95rem;
-        }
-
-        .about-quick-facts ul li span {
-            color: #94a3b8;
-        }
-
-        .about-quick-facts ul li strong {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        /* NEW REDESIGNED: Technical Skills Section (Tech Canvas Style) */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .skills-category-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
+        .about-stats-card {
+            background: #0f172a; /* Slate background matching the brand themes */
+            color: #f1f5f9;
             padding: 3rem 2.5rem;
             border-radius: 20px;
             position: relative;
             overflow: hidden;
-            transition: var(--transition);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
         }
 
-        .skills-category-card::before {
+        .about-stats-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), #0ea5e9);
-            opacity: 0;
-            transition: var(--transition);
+            top: -20px;
+            right: -20px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
-        .skills-category-card:hover {
+        .about-stats-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .about-stats-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .about-stats-item {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 1rem;
+        }
+
+        .about-stats-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .about-stats-item span {
+            color: #94a3b8;
+        }
+
+        .about-stats-item strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* NEW REDESIGNED: Technical Skills Section (Interactive Cards with Icons) */
+        .skills-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 1rem;
+        }
+
+        .skills-category-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skills-category-box:hover {
             transform: translateY(-8px);
             border-color: rgba(13, 148, 136, 0.3);
-            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.05);
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.05);
         }
 
-        .skills-category-card:hover::before {
-            opacity: 1;
-        }
-
-        .skills-category-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.75rem;
+        .skills-category-box h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--dark);
             display: flex;
             align-items: center;
-            gap: 0.85rem;
-            color: var(--dark);
-            font-weight: 700;
+            gap: 0.75rem;
         }
 
-        .skills-category-card h3 i {
+        .skills-category-box h3 i {
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
-        .skills-pill-grid {
+        .skills-items-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
+            flex-direction: column;
+            gap: 1.25rem;
         }
 
-        .skill-pill {
+        .skill-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             background: var(--light);
-            color: var(--gray);
-            padding: 0.6rem 1.25rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
             border: 1px solid transparent;
             transition: var(--transition);
         }
 
-        .skill-pill:hover {
+        .skill-row:hover {
             background: var(--primary-light);
-            color: var(--primary);
-            border-color: rgba(13, 148, 136, 0.25);
-            transform: scale(1.05);
+            border-color: rgba(13, 148, 136, 0.2);
         }
 
-        /* PROPOSED: Core Principles Section (Philosophy) */
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .philosophy-card {
+        .skill-icon-wrapper {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             background: var(--surface);
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-        }
-
-        .philosophy-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-        }
-
-        .philosophy-card .icon-wrap {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            background: var(--primary-light);
-            color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .philosophy-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-        }
-
-        .philosophy-card p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        /* Education Card Layout */
-        .edu-card {
-            background: var(--surface);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
-            border: 1px solid var(--border);
-            border-left: 6px solid var(--primary);
-        }
-
-        .edu-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .edu-meta {
             color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+            transition: var(--transition);
         }
 
-        .edu-card p {
-            color: var(--gray);
-            font-size: 1.05rem;
+        .skill-row:hover .skill-icon-wrapper {
+            background: var(--primary);
+            color: var(--surface);
+        }
+
+        .skill-label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark);
         }
 
         /* Contact Section with styled form */
@@ -602,7 +530,7 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            .about-wrapper {
+            .about-grid-modern {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -646,7 +574,6 @@
             h1 { font-size: 2.6rem; }
             section { padding: 6rem 1.5rem 3rem; }
             .contact-form { padding: 2rem 1.5rem; }
-            .about-pillars { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -666,14 +593,12 @@
             <ul class="nav-links">
                 <li><a href="#about" onclick="document.getElementById('menu-checkbox').checked = false;">About</a></li>
                 <li><a href="#skills" onclick="document.getElementById('menu-checkbox').checked = false;">Skills</a></li>
-                <li><a href="#philosophy" onclick="document.getElementById('menu-checkbox').checked = false;">Approach</a></li>
-                <li><a href="#education" onclick="document.getElementById('menu-checkbox').checked = false;">Education</a></li>
                 <li><a href="#contact" onclick="document.getElementById('menu-checkbox').checked = false;">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section (UNTOUCHED as requested) -->
+    <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="hero-left">
             <span class="hero-badge">Computer Science Student</span>
@@ -692,12 +617,12 @@
         </div>
     </section>
 
-    <!-- About Section (Redesigned & Corrected Academic Info) -->
+    <!-- About Section (Redesigned & Cards Removed) -->
     <section id="about" class="reveal">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-wrapper">
-                <div class="about-text">
+            <div class="about-grid-modern">
+                <div class="about-narrative">
                     <p>
                         Hello! My name is Mintsenot Tilahun, and I am a highly motivated 3rd-year Computer Science student pursuing my degree at <strong>Infolink University College</strong> at the Hawassa Campus in Ethiopia. Ever since my introduction to computing, I have been fascinated by how structured logic and database algorithms can solve real-world system inefficiencies. For me, computer science is more than just an academic major—it is a creative medium where rigorous architecture and visual accessibility merge to solve complex problems.
                     </p>
@@ -707,119 +632,113 @@
                     <p>
                         I strongly believe in writing readable, maintainable code. My primary areas of study cover developing robust database solutions with robust query logic, exploring software engineering workflows, and structuring application front-ends. As I progress through my academic path, I am excited to collaborate on new digital tools, participate in software internships, and contribute to the rapidly expanding tech space in Ethiopia.
                     </p>
-                    
-                    <!-- Added Pillar Badges for visual layout uniqueness -->
-                    <div class="about-pillars">
-                        <div class="about-pillar-card">
-                            <i class="fa-solid fa-database"></i>
-                            <span>System Architecture</span>
-                        </div>
-                        <div class="about-pillar-card">
-                            <i class="fa-solid fa-brain"></i>
-                            <span>Problem Solving</span>
-                        </div>
-                    </div>
                 </div>
                 
-                <!-- Updated Academic Info Card (Corrected Graduation Reference) -->
-                <div class="about-quick-facts">
+                <div class="about-stats-card">
                     <h4>Academic Profile</h4>
-                    <ul>
-                        <li>
+                    <div class="about-stats-list">
+                        <div class="about-stats-item">
                             <span>Institution</span>
                             <strong>Infolink University</strong>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="about-stats-item">
                             <span>Department</span>
                             <strong>Computer Science</strong>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="about-stats-item">
                             <span>Current Level</span>
                             <strong>3rd Year Student</strong>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="about-stats-item">
                             <span>Location</span>
                             <strong>Hawassa, Ethiopia</strong>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Skills Section (Redesigned Tech Stack Canvas) -->
+    <!-- Technical Skills Section (Redesigned with Real Icons) -->
     <section id="skills" class="reveal">
         <h2>Technical Focus</h2>
-        <div class="skills-container">
+        <div class="skills-grid-modern">
             
             <!-- Category 1 -->
-            <div class="skills-category-card">
+            <div class="skills-category-box">
                 <h3><i class="fa-solid fa-terminal"></i> Programming</h3>
-                <div class="skills-pill-grid">
-                    <span class="skill-pill">Python</span>
-                    <span class="skill-pill">Java</span>
-                    <span class="skill-pill">JavaScript</span>
+                <div class="skills-items-container">
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <span class="skill-label">Python</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-brands fa-java"></i>
+                        </div>
+                        <span class="skill-label">Java</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <span class="skill-label">JavaScript</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Category 2 -->
-            <div class="skills-category-card">
-                <h3><i class="fa-solid fa-cube"></i> Fundamentals</h3>
-                <div class="skills-pill-grid">
-                    <span class="skill-pill">Data Structures</span>
-                    <span class="skill-pill">Algorithms</span>
-                    <span class="skill-pill">Git</span>
+            <div class="skills-category-box">
+                <h3><i class="fa-solid fa-cube"></i> Core Fundamentals</h3>
+                <div class="skills-items-container">
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <span class="skill-label">Data Structures</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <span class="skill-label">Algorithms</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                        <span class="skill-label">Git</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Category 3 -->
-            <div class="skills-category-card">
-                <h3><i class="fa-solid fa-network-wired"></i> Systems & Web</h3>
-                <div class="skills-pill-grid">
-                    <span class="skill-pill">SQL</span>
-                    <span class="skill-pill">PostgreSQL</span>
-                    <span class="skill-pill">HTML & CSS</span>
+            <div class="skills-category-box">
+                <h3><i class="fa-solid fa-network-wired"></i> Web & Data Engines</h3>
+                <div class="skills-items-container">
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <span class="skill-label">SQL</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-solid fa-table"></i>
+                        </div>
+                        <span class="skill-label">PostgreSQL</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-icon-wrapper">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                        <span class="skill-label">HTML & CSS</span>
+                    </div>
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <!-- PROPOSED SECTION: Core Philosophy & Approach -->
-    <section id="philosophy" class="reveal">
-        <h2>My Philosophy</h2>
-        <div class="philosophy-grid">
-            <div class="philosophy-card">
-                <div class="icon-wrap">
-                    <i class="fa-solid fa-gears"></i>
-                </div>
-                <h3>Logical Structure</h3>
-                <p>Prioritizing clean architectures over temporary fixes. Code should be readable, well-structured, and written to scale with future requirements.</p>
-            </div>
-            <div class="philosophy-card">
-                <div class="icon-wrap">
-                    <i class="fa-solid fa-database"></i>
-                </div>
-                <h3>Data-First Thinking</h3>
-                <p>Believing that robust systems start with accurate data models and efficient query structures. Designing databases that serve application needs reliably.</p>
-            </div>
-            <div class="philosophy-card">
-                <div class="icon-wrap">
-                    <i class="fa-solid fa-lightbulb"></i>
-                </div>
-                <h3>Constant Iteration</h3>
-                <p>Staying curious, trying new tools, and using logical problem-solving to approach technical challenges with patience and planning.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="reveal">
-        <h2>Education</h2>
-        <div class="edu-card">
-            <h3>BSc in Computer Science</h3>
-            <p class="edu-meta">Infolink University College, Hawassa | 2023 - Present</p>
-            <p>Developing deep conceptual and practical knowledge in core software cycles, relational database architectures, data structures, and computer networking systems.</p>
         </div>
     </section>
 
@@ -852,18 +771,17 @@
 
     <!-- Simple JavaScript for Scroll Reveal Animation -->
     <script>
-        // Set up the intersection observer
         const reveals = document.querySelectorAll('.reveal');
         
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Stop observing once animated
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.12 // Trigger reveal when 12% of the component is visible
+            threshold: 0.12 
         });
 
         reveals.forEach(element => revealObserver.observe(element));
